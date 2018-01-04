@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
@@ -11,9 +11,9 @@ android {
     apply from: '../gradle/androidCommonConfigs.gradle', to: android
 
     defaultConfig {
-        applicationId "com.r21nomi.android_db_examples"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             postprocessing {
@@ -30,21 +30,20 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(':data')
-
     implementation deps.kotlin
-
-    implementation deps.supportV7
-    implementation deps.supportConstraintLayout
-
-    implementation deps.rxjava2
-    implementation deps.rxandroid2
 
     implementation deps.dagger
     implementation deps.daggerAndroid
     implementation deps.daggerAndroidSupport
     kapt deps.daggerCompiler
     kapt deps.daggerAndroidProcessor
+
+    api deps.retrofit2
+    implementation deps.retrofit2moshi
+    implementation deps.retrofit2RxJava2
+    implementation deps.okhttp3
+    implementation deps.okhttp3LoggingInterceptor
+    api deps.moshi
 
     testImplementation deps.junit
     androidTestImplementation deps.testRunner
