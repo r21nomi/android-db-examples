@@ -1,5 +1,9 @@
 package com.r21nomi.android_db_examples.di
 
+import android.app.Application
+import android.content.Context
+import com.r21nomi.android_db_examples.App
+import dagger.Binds
 import dagger.Module
 
 /**
@@ -8,5 +12,11 @@ import dagger.Module
 @Module(
         subcomponents = arrayOf()
 )
-class ApplicationModule {
+abstract class ApplicationModule {
+
+    @Binds
+    abstract fun provideApplication(app: App): Application
+
+    @Binds
+    abstract fun provideApplicationContext(application: Application): Context
 }

@@ -44,6 +44,10 @@ dependencies {
     implementation deps.okhttp3
     implementation deps.okhttp3LoggingInterceptor
     api deps.moshi
+    implementation deps.moshiKotlin
+
+    implementation deps.orma
+    kapt deps.ormaProcessor
 
     testImplementation deps.junit
     androidTestImplementation deps.testRunner
