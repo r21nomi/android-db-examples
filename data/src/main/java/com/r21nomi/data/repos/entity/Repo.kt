@@ -17,6 +17,17 @@ data class Repo(
         @Column
         var name: String = "",
 
+        @Json(name = "full_name")
+        @Column
+        var fullName: String = "",
+
+        @Json(name = "stargazers_count")
+        @Column
+        var stargazersCount: Int = 0,
+
+        @Column
+        var description: String? = null,
+
         @Json(name = "owner")
         @Column
         var user: User? = null

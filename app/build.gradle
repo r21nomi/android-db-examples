@@ -25,6 +25,9 @@ android {
             }
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -36,6 +39,7 @@ dependencies {
 
     implementation deps.supportV7
     implementation deps.supportConstraintLayout
+    implementation deps.recyclerView
 
     implementation deps.rxjava2
     implementation deps.rxandroid2
@@ -45,6 +49,8 @@ dependencies {
     implementation deps.daggerAndroidSupport
     kapt deps.daggerCompiler
     kapt deps.daggerAndroidProcessor
+
+    implementation deps.orma
 
     implementation deps.timber
 

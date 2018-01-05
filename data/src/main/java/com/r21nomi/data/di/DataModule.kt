@@ -1,6 +1,7 @@
 package com.r21nomi.data.di
 
 import android.content.Context
+import com.github.gfx.android.orma.AccessThreadConstraint
 import com.r21nomi.data.repos.ReposModule
 import com.r21nomi.data.repos.entity.OrmaDatabase
 import com.r21nomi.data.user.UserModule
@@ -29,7 +30,9 @@ class DataModule {
     @Provides
     @Singleton
     fun provideOrma(context: Context): OrmaDatabase {
-        return OrmaDatabase.builder(context).build()
+        return OrmaDatabase.builder(context)
+                .readOnMainThread(AccessThreadConstraint.NONE)
+                .build()
     }
 
     @Provides

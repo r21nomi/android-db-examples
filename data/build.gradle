@@ -27,6 +27,11 @@ android {
     }
 }
 
+kapt {
+    // Avoid NonExistentClass Error for using Orma.
+    correctErrorTypes = true
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
