@@ -1,6 +1,6 @@
 package com.r21nomi.data.user.local
 
-import com.r21nomi.data.user.entity.OrmaDatabase
+import com.r21nomi.data.repos.entity.OrmaDatabase
 import com.r21nomi.data.user.entity.User
 import javax.inject.Inject
 

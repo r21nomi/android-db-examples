@@ -2,8 +2,8 @@ package com.r21nomi.data.di
 
 import android.content.Context
 import com.r21nomi.data.repos.ReposModule
+import com.r21nomi.data.repos.entity.OrmaDatabase
 import com.r21nomi.data.user.UserModule
-import com.r21nomi.data.user.entity.OrmaDatabase
 import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module

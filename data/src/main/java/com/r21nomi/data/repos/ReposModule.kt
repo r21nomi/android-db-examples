@@ -1,5 +1,7 @@
 package com.r21nomi.data.repos
 
+import com.r21nomi.data.repos.local.RepoDbClient
+import com.r21nomi.data.repos.local.RepoSqlClient
 import com.r21nomi.data.repos.remote.ReposApi
 import com.r21nomi.data.repos.remote.ReposApiClient
 import dagger.Binds
@@ -15,4 +17,8 @@ abstract class ReposModule {
     @Binds
     @Singleton
     abstract fun provideReposApi(reposApiClient: ReposApiClient): ReposApi
+
+    @Binds
+    @Singleton
+    abstract fun provideRepoDbClient(userSqlClient: RepoSqlClient): RepoDbClient
 }
